@@ -12,7 +12,7 @@
 
     const newTodo = { text: newTodoText.value, status: false };
 
-    todos.push(newTodo)
-    console.log(todos);
+    todos.push(newTodo);
+    newTodoText.value = '';
   }, false);
 })();

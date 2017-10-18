@@ -28,6 +28,12 @@
     newTodoList();
   }
 
+  function setTodoDone() {
+    const index = this.dataset.index;
+    todos[index].status = true;
+    console.log(todos);
+  }
+
   function newTodoList() {
     const oldList = document.querySelector('#todos');
     const listSize = todos.length;
@@ -52,6 +58,8 @@
       itemLink.classList.add('item-link')
 
       itemLink.innerHTML = todos[index].text;
+
+      itemLink.addEventListener('click', setTodoDone, false);
 
       listItem.appendChild(itemLink);
       todoList.appendChild(listItem);

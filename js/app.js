@@ -7,9 +7,22 @@
 
   let todos = [];
 
+  newTodoText.addEventListener('keyup', function(event) {
+    const lettersCount = event.target.value.length;
+
+    if (lettersCount >= 4) {
+      addIcon.classList.add('active');
+    } else {
+      addIcon.classList.remove('active');
+    }
+  }, false);
+
   formTodo.addEventListener('submit', function(event) {
     event.preventDefault();
-    addTodo();
+
+    if (newTodoText.value.length >= 4) {
+      addTodo();
+    }
   }, false);
 
   function addTodo() {
@@ -76,6 +89,8 @@
 
     if (showList) {
       todoListContainer.appendChild(docFrag);
+      todoListContainer.classList.remove('hide-list');
+      todoListContainer.classList.add('show-list');
     }
   }
 
@@ -115,6 +130,8 @@
 
     if (showList) {
       doneTodoListContainer.appendChild(docFrag);
+      doneTodoListContainer.classList.remove('hide-list');
+      doneTodoListContainer.classList.add('show-list');
     }
   }
 })();

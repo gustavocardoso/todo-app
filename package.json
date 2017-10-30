@@ -4,7 +4,8 @@
   "description": "A simple todo app with Vanilla JS",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./node_modules/.bin/webpack --colors --progress",
+    "watch": "npm run build -- --watch"
   },
   "repository": {
     "type": "git",
